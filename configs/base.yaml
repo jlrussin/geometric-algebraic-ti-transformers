@@ -1,0 +1,56 @@
+# Default configuration shared by every experiment. Each directory under
+# experiments/ overrides some of these values.
+
+task:
+  item_pool_size: 300            # items available to the orderings
+  n_training_cues: 100           # cues seen during training
+  n_reserved_cues: 16            # cues never trained; used by the ICL test
+  cue_distribution:
+    kind: uniform                # uniform | zipf | frequent_cue
+    skew_alpha: 0.0              # Zipf skew over the training cues; 0 is uniform
+    frequent_cue_prop: 0.0       # probability of the frequent cue
+  p_cot: 1.0                     # proportion of pretraining trials with a chain of thought
+  chain_algorithm: main          # main | inferred_relations | descend_first | backtrack
+  show_cue: true                 # false: every sequence shows the same cue token
+
+model:
+  n_layers: 4
+  d_model: 256
+  d_ff: 1024
+  feedforward: ffn               # ffn | none
+
+pretraining:
+  steps: 100000
+  batch_size: 64
+  learning_rate: 0.001
+  eval_every: 2500               # steps between evaluations
+  battery: pretrained            # preset in configs/battery/
+
+finetuning:
+  steps: 1600
+  learning_rate: 0.0001
+  replay_prop: 0.1               # proportion of trials replaced by pretraining trials
+  uninformative_prop: 0.1        # proportion of the rest whose context shows other items
+  n_orderings: 1                 # fixed orderings presented
+  layout: conflicting            # conflicting | disjoint
+  eval_every: 200
+  battery: finetuned
+  reasoning_prop: 0.0            # proportion of congruent-context trials that reason first
+  reasoning_steps: 8             # reasoning steps written on those trials
+  ablated_heads: none            # none | context_reading | random
+  n_ablated_heads: 2
+
+evaluation:
+  max_reasoning_steps: 8         # the sweep runs from 0 to this value
+  contexts_per_pair: 10          # contexts sampled per ordered pair
+  battery: null                  # null: the preset of the training stage
+  ablated_scoring: false         # also score finetuning with heads ablated
+
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+logging:
+  log_every: 100                 # steps between training rows
+  wandb:
+    enabled: false               # optional mirror to Weights & Biases
+    project: null
+    entity: null

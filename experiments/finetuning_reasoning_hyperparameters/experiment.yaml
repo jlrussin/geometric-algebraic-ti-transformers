@@ -1,0 +1,39 @@
+name: finetuning_reasoning_hyperparameters
+question: >-
+  When the network may reason over the context before answering while it
+  finetunes on one fixed ordering, at which finetuning learning rates and
+  proportions of fixed-ordering trials with an uninformative context does it
+  learn that ordering less in its weights, and does ablating the heads that
+  read the context while it reasons restore that learning?
+stages: [finetune]
+delta:
+  finetuning.eval_every: 400
+  evaluation.ablated_scoring: true
+axes:
+  - name: learning_rate
+    path: finetuning.learning_rate
+    values: [0.0001, 0.0003, 0.001]
+  - name: uninformative_prop
+    path: finetuning.uninformative_prop
+    values: [0.0, 0.01, 0.03, 0.1]
+  - name: ablated_heads
+    path: finetuning.ablated_heads
+    values: [none, context_reading, random]
+  - name: reasoning_prop
+    path: finetuning.reasoning_prop
+    values: [0.0, 1.0]
+exclude:
+  # Heads are ablated only with reasoning on every congruent trial.
+  - { ablated_heads: context_reading, reasoning_prop: 0.0 }
+  - { ablated_heads: random, reasoning_prop: 0.0 }
+  # Seeds 0-2 only.
+  - { seed: 3 }
+  - { seed: 4 }
+  - { seed: 5 }
+  - { seed: 6 }
+  - { seed: 7 }
+  - { seed: 8 }
+  - { seed: 9 }
+depends_on:
+  experiment: canonical_pretraining
+  match: [seed]

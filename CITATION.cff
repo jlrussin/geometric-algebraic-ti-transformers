@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: geometric-algebraic-ti-transformers
+abstract: >-
+  Transformer experiments for the paper "Geometric and algebraic
+  inference in humans and neural networks".
+type: software
+license: MIT
+version: 1.0.0
+date-released: "2026-11-03"
+repository-code: "https://github.com/jlrussin/geometric-algebraic-ti-transformers"
+authors:
+  - family-names: Russin
+    given-names: Jacob
+    affiliation: "Department of Computer Science and Department of Cognitive and Psychological Sciences, Brown University"
+  - family-names: Kim
+    given-names: Joonhwa
+    affiliation: "Department of Neuroscience, Brown University"
+  - family-names: Pavlick
+    given-names: Ellie
+    affiliation: "Department of Computer Science, Brown University"
+  - family-names: Frank
+    given-names: Michael J.
+    affiliation: "Department of Cognitive and Psychological Sciences and Carney Institute for Brain Science, Brown University"
+preferred-citation:
+  type: article
+  title: "Geometric and algebraic inference in humans and neural networks"
+  year: 2026
+  authors:
+    - family-names: Russin
+      given-names: Jacob
+    - family-names: Kim
+      given-names: Joonhwa
+    - family-names: Pavlick
+      given-names: Ellie
+    - family-names: Frank
+      given-names: Michael J.
+  url: "https://arxiv.org/abs/2611.00387"
+  doi: "10.48550/arXiv.2611.00387"

@@ -1,0 +1,16 @@
+name: finetuning_hyperparameters
+question: >-
+  How do the replay proportion and the finetuning learning rate trade off
+  learning the fixed ordering against keeping the in-context strategy?
+stages: [finetune]
+delta: {}
+axes:
+  - name: replay_prop
+    path: finetuning.replay_prop
+    values: [0.0, 0.1, 0.2, 0.5]
+  - name: learning_rate
+    path: finetuning.learning_rate
+    values: [0.00001, 0.0001, 0.001]
+depends_on:
+  experiment: canonical_pretraining
+  match: [seed]

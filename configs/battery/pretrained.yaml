@@ -1,0 +1,15 @@
+# Test battery for a pretrained network.
+name: pretrained
+conditions:
+  - name: iwl_test
+    source: training_distribution
+    context: uninformative
+    label: IWL test
+  - name: icl_test
+    source: novel_unseen_cue
+    context: congruent
+    label: ICL test
+  - name: icl_test_training_cue
+    source: training_distribution
+    context: congruent
+    label: ICL test (training cue)

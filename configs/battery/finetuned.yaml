@@ -1,0 +1,23 @@
+# Test battery for a network finetuned on a fixed ordering.
+name: finetuned
+conditions:
+  - name: iwl_test
+    source: finetuned
+    context: uninformative
+    label: IWL test
+  - name: icl_test
+    source: novel_unseen_cue
+    context: congruent
+    label: ICL test
+  - name: icl_test_training_cue
+    source: training_distribution
+    context: congruent
+    label: ICL test (training cue)
+  - name: baseline_test
+    source: finetuned
+    context: congruent
+    label: baseline test
+  - name: arbitrage_test
+    source: finetuned
+    context: reversed
+    label: arbitrage test

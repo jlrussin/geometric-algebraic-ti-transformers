@@ -1,0 +1,10 @@
+name: symbolic_distance
+question: >-
+  After finetuning on one fixed ordering, how does accuracy depend on symbolic
+  distance and on the number of reasoning steps in the IWL and ICL tests?
+stages: [finetune]
+delta: {}
+axes: []
+depends_on:
+  experiment: canonical_pretraining
+  match: [seed]

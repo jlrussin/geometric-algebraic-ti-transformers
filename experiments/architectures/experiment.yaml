@@ -1,0 +1,22 @@
+name: architectures
+question: >-
+  Do depth, width, the feedforward sublayer, and the learning rate change the
+  in-context result?
+stages: [pretrain]
+delta: {}
+axes:
+  - name: n_layers
+    path: model.n_layers
+    values: [2, 4, 8]
+  - name: d_model
+    values: [128, 256]
+    set:
+      # The feedforward width tracks the residual width at four times.
+      128: { model.d_model: 128, model.d_ff: 512 }
+      256: { model.d_model: 256, model.d_ff: 1024 }
+  - name: feedforward
+    path: model.feedforward
+    values: [ffn, none]
+  - name: learning_rate
+    path: pretraining.learning_rate
+    values: [0.001, 0.0001]

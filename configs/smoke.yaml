@@ -1,0 +1,31 @@
+# Small values that run the whole path in seconds on CPU. The pool must hold a
+# finetuned ordering, its distractors, an uninformative context, and an ICL
+# test ordering: 41 items at least.
+
+task:
+  item_pool_size: 48
+  n_training_cues: 6
+  n_reserved_cues: 2
+
+model:
+  n_layers: 2
+  d_model: 32
+  d_ff: 128
+
+pretraining:
+  steps: 60
+  batch_size: 8
+  eval_every: 30
+
+finetuning:
+  steps: 20
+  eval_every: 10
+
+evaluation:
+  max_reasoning_steps: 2
+  contexts_per_pair: 2
+
+seeds: [0]
+
+logging:
+  log_every: 10

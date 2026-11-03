@@ -1,0 +1,10 @@
+name: number_of_orderings
+question: >-
+  How many distinct cued orderings must pretraining contain before the network
+  orders novel items from context?
+stages: [pretrain]
+delta: {}
+axes:
+  - name: n_training_cues
+    path: task.n_training_cues
+    values: [1, 2, 5, 10, 100, 1000]

@@ -1,0 +1,21 @@
+name: conflicting_vs_disjoint
+question: >-
+  Does finetuning on several orderings of the same items under different cues
+  degrade readout differently from finetuning on item-disjoint orderings under
+  one cue?
+stages: [finetune]
+delta:
+  evaluation.max_reasoning_steps: 0
+axes:
+  - name: layout
+    path: finetuning.layout
+    values: [conflicting, disjoint]
+  - name: n_orderings
+    path: finetuning.n_orderings
+    values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+exclude:
+  # One ordering is the same design under either layout; it is kept once.
+  - { layout: disjoint, n_orderings: 1 }
+depends_on:
+  experiment: canonical_pretraining
+  match: [seed]

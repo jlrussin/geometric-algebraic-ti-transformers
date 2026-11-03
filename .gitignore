@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+
+# Local environment; only the template in scripts/slurm/ is committed
+.env
+
+# Per-run artifacts are large and regenerated; the tidy tables are committed
+results/*/runs/
+*.pt
+*.ckpt
+wandb/
+
+# Figures are regenerated from the committed tables
+figures/out/
+
+# The smoke test's output
+results/smoke/
+
+# Cluster logs
+slurm_logs/
+slurm-*.out
+slurm-*.err
+
+# macOS
+.DS_Store

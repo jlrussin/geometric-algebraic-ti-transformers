@@ -1,0 +1,50 @@
+package_version: 0.1.0
+tables:
+- table: eval
+  path: eval.parquet
+  rows: 199260
+  sha256: ca573053b86eb11b15176206f3411a3ce043794f717a6823938f91f63a4c2e22
+  axes: []
+  runs:
+  - seed-0
+  - seed-1
+  - seed-2
+  - seed-3
+  - seed-4
+  - seed-5
+  - seed-6
+  - seed-7
+  - seed-8
+  - seed-9
+- table: eval_pairs
+  path: eval_pairs.parquet
+  rows: 11340
+  sha256: a94b0bdd0c706ec91d954ecef21d654650c1e329dbcbc8354c0d22468d30f32b
+  axes: []
+  runs:
+  - seed-0
+  - seed-1
+  - seed-2
+  - seed-3
+  - seed-4
+  - seed-5
+  - seed-6
+  - seed-7
+  - seed-8
+  - seed-9
+- table: train
+  path: train.parquet
+  rows: 10000
+  sha256: f898cabad8bf36280bacc7fd950d3afa933416868aaca3bf4611efcc69960a40
+  axes: []
+  runs:
+  - seed-0
+  - seed-1
+  - seed-2
+  - seed-3
+  - seed-4
+  - seed-5
+  - seed-6
+  - seed-7
+  - seed-8
+  - seed-9

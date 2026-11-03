@@ -1,0 +1,7 @@
+name: canonical_pretraining
+question: >-
+  How well does a network trained with the canonical configuration order novel
+  items from context and read out the orderings it has learned?
+stages: [pretrain]
+delta: {}
+axes: []

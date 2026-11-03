@@ -1,0 +1,10 @@
+name: chain_algorithms
+question: >-
+  Does the choice of chain-generation algorithm during pretraining change how
+  the network orders novel items in context?
+stages: [pretrain]
+delta: {}
+axes:
+  - name: chain_algorithm
+    path: task.chain_algorithm
+    values: [main, inferred_relations, descend_first, backtrack]

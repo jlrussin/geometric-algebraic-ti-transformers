@@ -1,0 +1,19 @@
+name: components
+question: >-
+  Which attention heads read the context while the network writes its reasoning steps, and what
+  do direct and reasoned answers lose without them?
+# The ablate stage ranks each network's attention heads by their attention from its reasoning
+# steps onto the context relations they mention, then scores the content battery at every
+# reasoning-step value 0..8 with the network intact, with each head replaced by its mean output,
+# with its top-ranked heads replaced together, and with random sets from outside the top.
+stages: [ablate]
+delta:
+  task.cue_distribution.kind: frequent_cue
+  task.cue_distribution.frequent_cue_prop: 0.2
+  task.p_cot: 0.9
+  pretraining.battery: content
+  evaluation.battery: content
+axes: []
+depends_on:
+  experiment: content_effects
+  match: [seed]

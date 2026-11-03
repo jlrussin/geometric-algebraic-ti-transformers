@@ -1,0 +1,23 @@
+name: representation
+question: >-
+  Is rank linearly decodable by layer, and does erasing, inverting, or
+  overwriting the rank direction change which ordering the network follows?
+# The represent stage probes every site of the network and runs the content battery under every
+# edit at every reasoning-step value 0..8: erase gains 3, 2.5, 2, 1.5, 1, 0.75, 0.5, 0.25, 0,
+# -0.5, -1 along the rank direction and along a random direction; write strengths 0, 0.25, 0.5,
+# 0.75, 1 toward the familiar, the reversed, and an unrelated ordering along the rank direction,
+# and toward the unrelated ordering along the random direction. The evaluate stage writes the
+# unedited baseline.
+stages: [represent, evaluate]
+delta:
+  task.cue_distribution.kind: frequent_cue
+  task.p_cot: 0.9
+  pretraining.battery: content
+  evaluation.battery: content
+axes:
+  - name: frequent_cue_prop
+    path: task.cue_distribution.frequent_cue_prop
+    values: [0.01, 0.05, 0.1, 0.2]
+depends_on:
+  experiment: content_effects
+  match: [seed, frequent_cue_prop]

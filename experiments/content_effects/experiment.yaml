@@ -1,0 +1,16 @@
+name: content_effects
+question: >-
+  As one cue becomes frequent during pretraining, when does the network follow
+  the ordering shown in context and when does it follow the ordering it has
+  learned?
+stages: [pretrain]
+delta:
+  task.cue_distribution.kind: frequent_cue
+  pretraining.battery: content
+axes:
+  - name: frequent_cue_prop
+    path: task.cue_distribution.frequent_cue_prop
+    values: [0.01, 0.05, 0.1, 0.2, 0.5, 0.8, 1.0]
+  - name: p_cot
+    path: task.p_cot
+    values: [0.5, 0.9, 0.99]

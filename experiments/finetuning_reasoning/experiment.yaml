@@ -1,0 +1,27 @@
+name: finetuning_reasoning
+question: >-
+  When the network may reason over the context before answering while it
+  finetunes on one fixed ordering, does it learn that ordering less in its
+  weights, and does ablating the heads that read the context while it reasons
+  restore that learning?
+stages: [finetune]
+delta:
+  finetuning.learning_rate: 0.001
+  finetuning.uninformative_prop: 0.01
+  finetuning.eval_every: 100
+  evaluation.contexts_per_pair: 50
+  evaluation.ablated_scoring: true
+axes:
+  - name: ablated_heads
+    path: finetuning.ablated_heads
+    values: [none, context_reading, random]
+  - name: reasoning_prop
+    path: finetuning.reasoning_prop
+    values: [0.0, 1.0]
+exclude:
+  # Heads are ablated only with reasoning on every congruent trial.
+  - { ablated_heads: context_reading, reasoning_prop: 0.0 }
+  - { ablated_heads: random, reasoning_prop: 0.0 }
+depends_on:
+  experiment: canonical_pretraining
+  match: [seed]

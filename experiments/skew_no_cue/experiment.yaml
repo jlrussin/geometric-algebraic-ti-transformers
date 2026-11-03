@@ -1,0 +1,14 @@
+name: skew_no_cue
+question: >-
+  When every sequence shows the same cue token, so that a trial does not say which ordering its
+  items follow, how does skew in the cue-frequency distribution trade off in-context ordering
+  against reading out the orderings the network has learned?
+stages: [pretrain]
+delta:
+  task.cue_distribution.kind: zipf
+  task.p_cot: 0.9
+  task.show_cue: false
+axes:
+  - name: skew_alpha
+    path: task.cue_distribution.skew_alpha
+    values: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 10]

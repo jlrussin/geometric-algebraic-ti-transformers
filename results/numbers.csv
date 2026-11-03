@@ -1,0 +1,50 @@
+id,site,printed,computed,source,match
+tf-1,"Symbolic distance effects (SDE) figure, reasoning-steps panel",0.88,0.88,icl_test_accuracy_largest_budget,True
+tf-2,"Symbolic distance effects (SDE) figure, reasoning-steps panel",0.72,0.72,iwl_test_accuracy_largest_budget,True
+tf-3,"Content effects in transitive inference figure, reasoning-steps panel",0.99,0.99,congruent_accuracy_largest_budget,True
+tf-4,"Content effects in transitive inference figure, reasoning-steps panel",0.97,0.97,reversed_accuracy_largest_budget,True
+tf-5,"Content effects in transitive inference figure, reasoning-steps panel",0.99,0.99,shuffled_accuracy_largest_budget,True
+tf-6,"Extended results, transformers, alternative chain-of-thought algorithms",Three,Three,algorithms_steps_rise,True
+tf-7,"Extended results, transformers, alternative chain-of-thought algorithms",four,four,algorithms,True
+tf-8,"Extended results, transformers, alternative chain-of-thought algorithms",inferred relations,inferred relations,algorithms_steps_fall,True
+tf-9,Architecture and learning-rate sweep figure,0.0017,0.0017,loss_layers8_width256_ffn_lr0.001,True
+tf-10,Architecture and learning-rate sweep figure,0.00044,0.00044,loss_layers8_width256_ffn_lr0.0001,True
+tf-11,Architecture and learning-rate sweep figure,0.0016,0.0016,loss_layers8_width256_none_lr0.001,True
+tf-12,Architecture and learning-rate sweep figure,0.00076,0.00076,loss_layers8_width256_none_lr0.0001,True
+tf-13,Architecture and learning-rate sweep figure,0.0013,0.0013,loss_layers8_width128_ffn_lr0.001,True
+tf-14,Architecture and learning-rate sweep figure,0.00069,0.00069,loss_layers8_width128_ffn_lr0.0001,True
+tf-15,Architecture and learning-rate sweep figure,0.0012,0.0012,loss_layers8_width128_none_lr0.001,True
+tf-16,Architecture and learning-rate sweep figure,0.0016,0.0016,loss_layers8_width128_none_lr0.0001,True
+tf-17,Architecture and learning-rate sweep figure,0.0017,0.0017,loss_layers4_width256_ffn_lr0.001,True
+tf-18,Architecture and learning-rate sweep figure,0.00033,0.00033,loss_layers4_width256_ffn_lr0.0001,True
+tf-19,Architecture and learning-rate sweep figure,0.0014,0.0014,loss_layers4_width256_none_lr0.001,True
+tf-20,Architecture and learning-rate sweep figure,0.00067,0.00067,loss_layers4_width256_none_lr0.0001,True
+tf-21,Architecture and learning-rate sweep figure,0.0024,0.0024,loss_layers4_width128_ffn_lr0.001,True
+tf-22,Architecture and learning-rate sweep figure,0.0016,0.0016,loss_layers4_width128_ffn_lr0.0001,True
+tf-23,Architecture and learning-rate sweep figure,0.0023,0.0023,loss_layers4_width128_none_lr0.001,True
+tf-24,Architecture and learning-rate sweep figure,0.015,0.015,loss_layers4_width128_none_lr0.0001,True
+tf-25,Architecture and learning-rate sweep figure,0.089,0.089,loss_layers2_width256_ffn_lr0.001,True
+tf-26,Architecture and learning-rate sweep figure,0.024,0.024,loss_layers2_width256_ffn_lr0.0001,True
+tf-27,Architecture and learning-rate sweep figure,0.059,0.059,loss_layers2_width256_none_lr0.001,True
+tf-28,Architecture and learning-rate sweep figure,0.12,0.12,loss_layers2_width256_none_lr0.0001,True
+tf-29,Architecture and learning-rate sweep figure,0.028,0.028,loss_layers2_width128_ffn_lr0.001,True
+tf-30,Architecture and learning-rate sweep figure,0.17,0.17,loss_layers2_width128_ffn_lr0.0001,True
+tf-31,Architecture and learning-rate sweep figure,0.13,0.13,loss_layers2_width128_none_lr0.001,True
+tf-32,Architecture and learning-rate sweep figure,0.23,0.23,loss_layers2_width128_none_lr0.0001,True
+tf-33,"Extended results, transformers, architecture robustness",two-layer,two-layer,highest_loss_layers,True
+tf-34,"Extended results, transformers, additional mechanism results",10,10,networks,True
+tf-35,"Extended results, transformers, additional mechanism results",9,9,reasoning_lower_end_item_networks,True
+tf-36,"Extended results, transformers, additional mechanism results",9,9,reasoning_lower_interior_networks,True
+tf-37,"Extended results, transformers, additional mechanism results",8,8,context_reading_above_random_end_item_networks,True
+tf-38,"Extended results, transformers, additional mechanism results",7,7,context_reading_above_random_interior_networks,True
+tf-39,"Extended results, transformers, additional mechanism results",100,100,context_reading_ahead_from_step,True
+tf-40,"Extended results, transformers, additional mechanism results",seven,seven,unchosen_networks,True
+tf-41,"Extended results, transformers, additional mechanism results",seven,seven,unchosen_icl_test_lower_networks,True
+tf-42,"Extended results, transformers, additional mechanism results",six,six,unchosen_end_item_higher_networks,True
+tf-43,"Extended results, transformers, additional mechanism results",six,six,unchosen_interior_higher_networks,True
+tf-44,"Extended results, transformers, additional mechanism results",three,three,grid_seeds_per_setting,True
+tf-45,"Extended results, transformers, additional mechanism results",12,12,grid_settings,True
+tf-46,"Extended results, transformers, additional mechanism results",12,12,grid_icl_test_lower_settings,True
+tf-47,"Extended results, transformers, additional mechanism results",11,11,grid_trained_higher_settings,True
+tf-48,"Extended results, transformers, additional mechanism results",11,11,grid_end_item_higher_settings,True
+tf-49,"Extended results, transformers, additional mechanism results",10,10,grid_interior_higher_settings,True

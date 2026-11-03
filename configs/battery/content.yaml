@@ -1,0 +1,23 @@
+# Test battery for the content experiments: the frequent cue's ordering under four contexts.
+name: content
+conditions:
+  - name: frequent_cue_uninformative
+    source: frequent_cue
+    context: uninformative
+    label: uninformative
+  - name: frequent_cue_congruent
+    source: frequent_cue
+    context: congruent
+    label: congruent
+  - name: frequent_cue_reversed
+    source: frequent_cue
+    context: reversed
+    label: reversed
+  - name: frequent_cue_shuffled
+    source: frequent_cue
+    context: shuffled
+    label: shuffled
+  - name: icl_test
+    source: novel_unseen_cue
+    context: congruent
+    label: ICL test
